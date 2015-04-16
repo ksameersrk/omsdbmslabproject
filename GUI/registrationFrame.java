@@ -16,10 +16,11 @@ public class registrationFrame extends javax.swing.JFrame {
     private javax.swing.JTextField registrationFormTextFieldName;
     private javax.swing.JTextField registrationFormTextFieldPhoneNumber;
     private javax.swing.JTextField registrationFormTextFieldStatus;
+    //User user = new User();
 
     public registrationFrame() {
         initComponents();
-    }                    
+    }
     private void initComponents() {
 
         registrationFormLabel1 = new javax.swing.JLabel();
@@ -186,51 +187,96 @@ public class registrationFrame extends javax.swing.JFrame {
         );
 
         pack();
-    }                      
+    }
 
-    private void registrationFormTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) 
-    {                                                              
-    }                                                             
+    private void registrationFormTextFieldNameActionPerformed(java.awt.event.ActionEvent evt)
+    {
+        //user.name = registrationFormTextFieldName.getText();
+        //System.out.println(registrationFormTextFieldName.getText());
+    }
 
     private void registrationFormTextFieldPhoneNumberActionPerformed(java.awt.event.ActionEvent evt)
-    {                                                                     
-    }                                                                    
+    {
+        //user.phoneNumber = registrationFormTextFieldPhoneNumber.getText();
+        //System.out.println(registrationFormTextFieldPhoneNumber.getText());
+    }
 
     private void registrationFormRadioButtonMaleActionPerformed(java.awt.event.ActionEvent evt)
-    {                                                                
-    }                                                               
+    {
+        if(registrationFormRadioButtonMale.isSelected())
+        {
+            //user.sex = registrationFormRadioButtonMale.getText();
+            //System.out.println(registrationFormRadioButtonMale.getText());
+        }
+    }
 
     private void registrationFormRadioButtonFemaleActionPerformed(java.awt.event.ActionEvent evt)
-    {                                                                  
-    }                                                                 
+    {
+        if(registrationFormRadioButtonFemale.isSelected())
+        {
+            //user.sex = registrationFormRadioButtonFemale.getText();
+            //System.out.println(registrationFormRadioButtonFemale.getText());
+        }
+    }
 
     private void registrationFormTextFieldAgeActionPerformed(java.awt.event.ActionEvent evt)
-    {                                                             
-    }                                                            
+    {
+        //user.age = registrationFormTextFieldAge.getText();
+        //System.out.println(registrationFormTextFieldAge.getText());
+    }
 
     private void registrationFormTextFieldCountryActionPerformed(java.awt.event.ActionEvent evt)
-    {                                                                 
-    }                                                                
+    {
+        //user.country = registrationFormTextFieldCountry.getText();
+        //System.out.println(registrationFormTextFieldCountry.getText());
+    }
 
     private void registrationFormButtonBackActionPerformed(java.awt.event.ActionEvent evt)
-    {                                                           
+    {
         loginFrame lf = new loginFrame();
         lf.makeVisible();
         setVisible(false);
         dispose();
-    }                                                          
+    }
 
     private void registrationFormButtonSubmitActionPerformed(java.awt.event.ActionEvent evt)
-    {                                                             
+    {
+        //user.name = registrationFormTextFieldName.getText();
+        System.out.println(registrationFormTextFieldName.getText());
+        //user.phoneNumber = registrationFormTextFieldPhoneNumber.getText();
+        System.out.println(registrationFormTextFieldPhoneNumber.getText());
+        if(registrationFormRadioButtonMale.isSelected())
+        {
+            //user.sex = registrationFormRadioButtonMale.getText();
+            System.out.println(registrationFormRadioButtonMale.getText());
+        }
+        if(registrationFormRadioButtonFemale.isSelected())
+        {
+            //user.sex = registrationFormRadioButtonFemale.getText();
+            System.out.println(registrationFormRadioButtonFemale.getText());
+        }
+        //user.age = registrationFormTextFieldAge.getText();
+        System.out.println(registrationFormTextFieldAge.getText());
+        //user.country = registrationFormTextFieldCountry.getText();
+        System.out.println(registrationFormTextFieldCountry.getText());
+        //user.status = registrationFormTextFieldStatus.getText();
+        System.out.println(registrationFormTextFieldStatus.getText());
+        /*
+         * addNewUser(user);
+         * New user is added with all the fields mentioned.
+         *
+         **/
         loginFrame lf = new loginFrame();
         lf.makeVisible();
         setVisible(false);
         dispose();
-    }                                                            
+    }
 
     private void registrationFormTextFieldStatusActionPerformed(java.awt.event.ActionEvent evt)
-    {                                                                
-    }                                                               
+    {
+        //user.status = registrationFormTextFieldStatus.getText();
+        //System.out.println(registrationFormTextFieldStatus.getText());
+    }
 
     public static void main(String args[]) {
         try {
@@ -255,23 +301,23 @@ public class registrationFrame extends javax.swing.JFrame {
             }
         });
     }
-    
+
     public void makeVisible()
     {
         setVisible(true);
     }
-    
+
     public void createWindow()
     {
-        java.awt.EventQueue.invokeLater(new Runnable() 
+        java.awt.EventQueue.invokeLater(new Runnable()
         {
-            public void run() 
+            public void run()
             {
                 new registrationFrame().setVisible(true);
             }
         });
     }
 
-                  
-                  
+
+
 }
