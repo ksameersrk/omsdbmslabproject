@@ -1,20 +1,37 @@
+import javax.swing.DefaultListModel;
 
 public class individualWindow extends javax.swing.JFrame {
 
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JList jList1;
-    private javax.swing.JScrollPane jScrollPane1; 
+    private javax.swing.JScrollPane jScrollPane1;
+    private DefaultListModel lm;
 
     public individualWindow() {
         initComponents();
-    }                       
+    }
     private void initComponents() {
+
+         lm = new DefaultListModel();
+         /* Now get the list of user contact name's
+         * who is in current user's individualWindow.
+         * then
+         *
+         * lm.addElement(userName1);
+         * lm.addElement(username2);
+         * etc etc...
+         *
+         *
+         */
+         lm.addElement("Sameer");
+         lm.addElement("ASDFFF");
+         lm.addElement("fwfsdfdsf");
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        jList1 = new javax.swing.JList(lm);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -27,11 +44,11 @@ public class individualWindow extends javax.swing.JFrame {
             }
         });
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
+        /*jList1.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
-        });
+        });*/
         jList1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jList1MouseClicked(evt);
@@ -73,16 +90,16 @@ public class individualWindow extends javax.swing.JFrame {
         );
 
         pack();
-    }                       
+    }
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         setVisible(false);
         dispose();
         homeWindow f0 = new homeWindow();
         f0.makeVisible();
-    }                                        
+    }
 
-    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {                                    
+    private void jList1MouseClicked(java.awt.event.MouseEvent evt) {
         System.out.println("LIST CLICKED");
         int index = jList1.getSelectedIndex();
         System.out.println(index);
@@ -91,17 +108,25 @@ public class individualWindow extends javax.swing.JFrame {
         individualChatMsgWindow f4 = new individualChatMsgWindow();
         f4.createWindow();
         setVisible(false);
-        
-    }                    
-    
+        /*
+         * from index or k (which conatins name)
+         * the object should be identified and
+         * and passed to individualChatMsgWindow;
+        individualChatMsgWindow f4 = new individualChatMsgWindow(objectUserClicked);
+        f4.createWindow();
+        setVisible(false);
+         * */
+
+    }
+
     public void makeVisible()
     {
          setVisible(true);
-    }               
+    }
 
-    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent e) {                                    
+    private void jList1ValueChanged(javax.swing.event.ListSelectionEvent e) {
 
-    }                                   
+    }
     public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -119,7 +144,7 @@ public class individualWindow extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(individualWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new individualWindow().setVisible(true);
@@ -129,13 +154,13 @@ public class individualWindow extends javax.swing.JFrame {
 
     public void createWindow()
     {
-        java.awt.EventQueue.invokeLater(new Runnable() 
+        java.awt.EventQueue.invokeLater(new Runnable()
         {
-            public void run() 
+            public void run()
             {
                 new individualWindow().setVisible(true);
             }
         });
-    }                    
-                 
+    }
+
 }
