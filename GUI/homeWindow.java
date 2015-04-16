@@ -1,17 +1,17 @@
-public class homeWindow extends javax.swing.JFrame 
+public class homeWindow extends javax.swing.JFrame
 {
     private javax.swing.JLabel OMSLabel;
     private javax.swing.JButton contactsButton;
     private javax.swing.JButton exit;
     private javax.swing.JButton gMessagesButton;
     private javax.swing.JButton messagesButton;
-    
-    public homeWindow() 
+
+    public homeWindow()
     {
         initComponents();
     }
-                             
-    private void initComponents() 
+
+    private void initComponents()
     {
         OMSLabel = new javax.swing.JLabel();
         messagesButton = new javax.swing.JButton();
@@ -24,36 +24,36 @@ public class homeWindow extends javax.swing.JFrame
         OMSLabel.setText("ONLINE MESSAGING SYSTEM");
 
         messagesButton.setText("MESSAGES");
-        messagesButton.addActionListener(new java.awt.event.ActionListener() 
+        messagesButton.addActionListener(new java.awt.event.ActionListener()
         {
-            public void actionPerformed(java.awt.event.ActionEvent evt) 
+            public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 messagesButtonActionPerformed(evt);
             }
         });
 
         gMessagesButton.setText("G MESSAGES");
-        gMessagesButton.addActionListener(new java.awt.event.ActionListener() 
+        gMessagesButton.addActionListener(new java.awt.event.ActionListener()
         {
-            public void actionPerformed(java.awt.event.ActionEvent evt) 
+            public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 gMessagesButtonActionPerformed(evt);
             }
         });
 
         contactsButton.setText("CONTACTS");
-        contactsButton.addActionListener(new java.awt.event.ActionListener() 
+        contactsButton.addActionListener(new java.awt.event.ActionListener()
         {
-            public void actionPerformed(java.awt.event.ActionEvent evt) 
+            public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 contactsButtonActionPerformed(evt);
             }
         });
 
         exit.setText("EXIT");
-        exit.addActionListener(new java.awt.event.ActionListener() 
+        exit.addActionListener(new java.awt.event.ActionListener()
         {
-            public void actionPerformed(java.awt.event.ActionEvent evt) 
+            public void actionPerformed(java.awt.event.ActionEvent evt)
             {
                 exitActionPerformed(evt);
             }
@@ -92,43 +92,43 @@ public class homeWindow extends javax.swing.JFrame
         );
 
         pack();
-    }                        
+    }
 
-    private void messagesButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {                                               
+    private void messagesButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {
         individualWindow p = new individualWindow();
         p.createWindow();
         System.out.println("Messages CLICKED");
         setVisible(false);
-    }                                              
-    
+    }
+
     public void makeVisible()
     {
         setVisible(true);
     }
 
     private void gMessagesButtonActionPerformed(java.awt.event.ActionEvent evt)
-    {                                                
+    {
         groupWindow p = new groupWindow();
         p.createWindow();
         System.out.println("Group Messages CLICKED");
         setVisible(false);
-    }                                               
+    }
 
-    private void contactsButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {                                               
+    private void contactsButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {
         contactsWindow p = new contactsWindow();
         p.createWindow();
         System.out.println("Contacts CLICKED");
         setVisible(false);
-    }                                              
+    }
 
-    private void exitActionPerformed(java.awt.event.ActionEvent evt) 
-    {                                     
+    private void exitActionPerformed(java.awt.event.ActionEvent evt)
+    {
         System.exit(0);
-    }                                    
+    }
 
-    public static void main(String args[]) 
+    public static void main(String args[])
     {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -146,26 +146,26 @@ public class homeWindow extends javax.swing.JFrame
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(homeWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        java.awt.EventQueue.invokeLater(new Runnable() 
+        java.awt.EventQueue.invokeLater(new Runnable()
         {
-            public void run() 
+            public void run()
             {
                 new homeWindow().setVisible(true);
             }
         });
     }
-   
-   
+
+
     public void createWindow()
     {
-        java.awt.EventQueue.invokeLater(new Runnable() 
+        java.awt.EventQueue.invokeLater(new Runnable()
         {
-            public void run() 
+            public void run()
             {
                 new homeWindow().setVisible(true);
             }
         });
-    }  
-                        
-                  
+    }
+
+
 }
