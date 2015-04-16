@@ -1,4 +1,4 @@
-public class loginFrame extends javax.swing.JFrame 
+public class loginFrame extends javax.swing.JFrame
 {
 
     private javax.swing.JButton loginCreditsButton;
@@ -7,13 +7,13 @@ public class loginFrame extends javax.swing.JFrame
     private javax.swing.JLabel loginLabel3;
     private javax.swing.JButton loginLoginButton;
     private javax.swing.JButton loginRegisterButton;
-    private javax.swing.JTextField loginTextField; 
-    
-    public loginFrame() 
+    private javax.swing.JTextField loginTextField;
+
+    public loginFrame()
     {
         initComponents();
-    }                     
-    private void initComponents() 
+    }
+    private void initComponents()
     {
 
         loginLabel1 = new javax.swing.JLabel();
@@ -108,30 +108,45 @@ public class loginFrame extends javax.swing.JFrame
         );
 
         pack();
-    }                      
+    }
 
-    private void loginTextFieldActionPerformed(java.awt.event.ActionEvent evt) 
-    {                                               
-    }                                              
+    private void loginTextFieldActionPerformed(java.awt.event.ActionEvent evt)
+    {
+    }
 
-    private void loginLoginButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {                                                 
+    private void loginLoginButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {
+        /*
+         * String phNo = loginTextField.getText();
+         * if(isRegistered(phNo))
+         * {
+         *
+            homeWindow f0 = new homeWindow();
+            f0.createWindow();
+            setVisible(false);
+         * }
+         * else
+         * {
+         *      JOptionPane.showMessageDialog(null,"Login Failed,regesiter first");
+         *      loginTextField.setText("");
+         * }
+         * */
         homeWindow f0 = new homeWindow();
         f0.createWindow();
         setVisible(false);
-    }                                                
+    }
 
-    private void loginRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {                                                    
+    private void loginRegisterButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {
         registrationFrame rf = new registrationFrame();
         rf.createWindow();
         setVisible(false);
-    }                                                   
+    }
 
-    private void loginCreditsButtonActionPerformed(java.awt.event.ActionEvent evt) 
-    {                                                   
-    }                                                  
-    public static void main(String args[]) 
+    private void loginCreditsButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {
+    }
+    public static void main(String args[])
     {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -158,6 +173,6 @@ public class loginFrame extends javax.swing.JFrame
     public void makeVisible()
     {
         setVisible(true);
-    }                    
-                 
+    }
+
 }
