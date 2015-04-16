@@ -24,6 +24,12 @@ public class individualChatMsgWindow extends javax.swing.JFrame
     public individualChatMsgWindow() {
         initComponents();
     }
+    /*
+     * public individualChatMsgWindow(User obj)
+     * {
+     *      User user = obj;
+     * }
+     * */
     private void initComponents() {
 
         lm = new DefaultListModel();
@@ -33,6 +39,28 @@ public class individualChatMsgWindow extends javax.swing.JFrame
          lm.addElement("Item 4");
          lm.addElement("Item 5");
          lm.addElement("Item 6");
+
+         /*
+          * get all the messages list btw the current
+          * user and user(obj);
+          * add all the chats to
+          * lm.addElement(chat1);
+          * lm.addElement(chat2);
+          * etc etc..
+          * if msg is from current_user to user_obj append
+          * "<<" at end of msg or otherwise append in beggining
+          * ">>"
+          *
+          * last seen :
+          * lastSeenValueLabel.setText(getLastSeen(obj));
+          * sent status
+          * sentStatusValueLabel.setText(Tick some method);
+          * recipent name:
+          * recipentNameLabel.setText(user_obj.name);
+          *
+          * remove of all .setText() statements below
+          * which update these value.
+          * */
 
         jLabel1 = new javax.swing.JLabel();
         recipentNameLabel = new javax.swing.JLabel();
@@ -69,7 +97,7 @@ public class individualChatMsgWindow extends javax.swing.JFrame
         });
         jScrollPane1.setViewportView(chatsMessageList);
 
-        messageTextField.setText("jTextField1");
+        messageTextField.setText("Enter the message here");
         messageTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 messageTextFieldActionPerformed(evt);
@@ -167,11 +195,20 @@ public class individualChatMsgWindow extends javax.swing.JFrame
         f1.makeVisible();
     }
 
-    private void sendButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void sendButtonActionPerformed(java.awt.event.ActionEvent evt)
+    {
 
+         String messageSending = messageTextField.getText();
+         messageSending = messageSending + "<<";
+         lm.addElement(messageSending);
+         messageTextField.setText("");
+         /*
+          * messageSent(messageSending);
+          */
     }
 
-    private void chatsMessageListMouseClicked(java.awt.event.MouseEvent evt) {
+    private void chatsMessageListMouseClicked(java.awt.event.MouseEvent evt)
+    {
     }
 
     private void messageTextFieldActionPerformed(java.awt.event.ActionEvent evt) {
